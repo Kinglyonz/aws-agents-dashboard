@@ -1,0 +1,31 @@
+name: aws-enterprise-security-ops
+region: nyc
+services:
+- name: web
+  github:
+    branch: main
+    deploy_on_push: true
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  http_port: 5001
+  routes:
+  - path: /
+  envs:
+  - key: AWS_REGION
+    scope: RUN_TIME
+    type: SECRET
+  - key: AWS_ACCESS_KEY_ID
+    scope: RUN_TIME
+    type: SECRET
+  - key: AWS_SECRET_ACCESS_KEY
+    scope: RUN_TIME
+    type: SECRET
+  - key: PORT
+    scope: RUN_TIME
+    value: "5001"
+  - key: NODE_ENV
+    scope: RUN_TIME
+    value: "production"
+  run_command: node server.js
+  build_command: npm install

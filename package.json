@@ -1,17 +1,21 @@
 {
   "name": "aws-agents-dashboard",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
-  "description": "AWS Lambda Agents Monitoring Dashboard for Gpulse",
+  "description": "AWS Enterprise Security Operations Center",
   "main": "server.js",
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
     "build": "echo 'Build complete'"
   },
-  "keywords": ["aws", "lambda", "monitoring", "dashboard"],
-  "author": "",
+  "keywords": ["aws", "lambda", "monitoring", "dashboard", "security", "compliance"],
+  "author": "Khalil Lyons - Orus Group",
   "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
